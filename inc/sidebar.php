@@ -58,7 +58,7 @@
             </li>
             <li class="nav-header">SETTINGS</li>
             <li class="nav-item">
-              <a href="pages/kanban.html" class="nav-link">
+              <a href="index.php?page=users" class="nav-link <?php $currentModule == 'users' ? print('active') : '' ?>">
                 <i class="nav-icon fas fa-user-cog"></i>
                 <p>
                   Users

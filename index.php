@@ -47,6 +47,14 @@
           include 'pages/karyawan/edit.php';
         } else if ($page == 'hapus-karyawan') {
           header('location: functions/karyawan/delete.php?id='.$_GET['id']);
+        } else if ($page == 'users') {
+          include 'pages/users/index.php';
+        } else if ($page == 'tambah-user') {
+          include 'pages/users/create.php';
+        } else if ($page == 'edit-user') {
+          include 'pages/users/edit.php';
+        } else if ($page == 'hapus-user') {
+          header('location: functions/users/delete.php?id='.$_GET['id']);
         } else {
           include 'pages/404.php';
         }

@@ -98,7 +98,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <a href="" class="btn btn-sm btn-default float-right ml-2">
+                    <a href="index.php?page=barang" class="btn btn-sm btn-default float-right ml-2">
                         Kembali
                     </a>
                     <button type="submit" class="btn btn-sm btn-primary float-right" name="store">
