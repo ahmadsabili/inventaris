@@ -41,6 +41,12 @@
           header('location: functions/jenis-barang/delete.php?id='.$_GET['id']);
         } else if ($page == 'karyawan') {
           include 'pages/karyawan/index.php';
+        } else if ($page == 'tambah-karyawan') {
+          include 'pages/karyawan/create.php';
+        } else if ($page == 'edit-karyawan') {
+          include 'pages/karyawan/edit.php';
+        } else if ($page == 'hapus-karyawan') {
+          header('location: functions/karyawan/delete.php?id='.$_GET['id']);
         } else {
           include 'pages/404.php';
         }

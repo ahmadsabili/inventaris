@@ -49,7 +49,7 @@
             </li>
             <li class="nav-header">DATA KARYAWAN</li>
             <li class="nav-item">
-              <a href="pages/calendar.html" class="nav-link">
+              <a href="index.php?page=karyawan" class="nav-link <?php $currentModule == 'karyawan' ? print('active') : '' ?>">
                 <i class="nav-icon fas fa-user-tie"></i>
                 <p>
                   Karyawan
