@@ -2,6 +2,9 @@
     $currentModule = 'barang';
     $sql = "SELECT * FROM barang INNER JOIN jenis_barang ON barang.jenis_barang_id = jenis_barang.id_jenis_barang INNER JOIN karyawan ON barang.karyawan_id = karyawan.id_karyawan";
 
+    $jenis_barang = mysqli_query($koneksi, "SELECT * FROM jenis_barang");
+    $karyawan = mysqli_query($koneksi, "SELECT * FROM karyawan");
+
     $result = mysqli_query($koneksi, $sql);
 ?>
 
@@ -51,8 +54,8 @@
                     <div class="col-sm-10">
                       <select class="form-control select2" name="jenis_barang_id" id="jenis_barang">
                         <option value="" disabled hidden selected>--Pilih jenis barang--</option>
-                        <?php foreach($result as $row) : ?>
-                          <option value="<?= $row['jenis_barang_id'] ?>"><?= $row['nama_jenis'] ?></option>
+                        <?php foreach($jenis_barang as $jb) : ?>
+                          <option value="<?= $jb['id_jenis_barang'] ?>"><?= $jb['nama_jenis'] ?></option>
                         <?php endforeach; ?>
                       </select>
                     </div>
@@ -62,8 +65,8 @@
                     <div class="col-sm-10">
                       <select class="form-control select2" name="karyawan_id" id="karyawan_id" style="width: 100%;">
                         <option value="" disabled hidden selected="selected">--Pilih pengguna--</option>
-                        <?php foreach($result as $row) : ?>
-                          <option value="<?= $row['karyawan_id'] ?>"><?= $row['badge'] ?> - <?= $row['nama_karyawan'] ?></option>
+                        <?php foreach($karyawan as $k) : ?>
+                          <option value="<?= $k['id_karyawan'] ?>"><?= $k['badge'] ?> - <?= $k['nama_karyawan'] ?></option>
                         <?php endforeach; ?>
                       </select>
                     </div>
