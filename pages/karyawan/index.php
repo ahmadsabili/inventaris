@@ -38,6 +38,7 @@
                     <th>No</th>
                     <th>Badge</th>
                     <th>Nama</th>
+                    <th>No Handphone</th>
                     <?php if ($_SESSION['role'] == 'admin') : ?>
                     <th>Aksi</th>
                     <?php endif; ?>
@@ -48,6 +49,7 @@
                         <td><?= $no++ ?></td>
                         <td><?= $karyawan['badge'] ?></td>
                         <td><?= $karyawan['nama_karyawan'] ?></td>
+                        <td><?= $karyawan['no_hp'] ?></td>
                         <?php if ($_SESSION['role'] == 'admin') : ?>
                         <td>
                           <a href="index.php?page=edit-karyawan&id=<?= $karyawan['id_karyawan'] ?>" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>

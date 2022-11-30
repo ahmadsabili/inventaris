@@ -37,6 +37,12 @@
                         <input type="text" class="form-control" id="nama_karyawan" name="nama_karyawan" placeholder="Masukkan nama karyawan" required>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label for="no_hp" class="col-sm-2 col-form-label">No Handphone</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="no_hp" name="no_hp" placeholder="Masukkan no handphone" required>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
