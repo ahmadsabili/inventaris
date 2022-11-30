@@ -1,5 +1,10 @@
 <?php
   $currentModule = 'dashboard';
+
+  $baik = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM barang WHERE kondisi = 'Baik'"));
+  $rusak = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM barang WHERE kondisi = 'Rusak'"));
+  $diterima = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM barang WHERE kondisi = 'Diterima'"));
+  $ditolak = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM barang WHERE kondisi = 'Ditolak'"));
 ?>
 
 <div class="content-wrapper">
@@ -20,58 +25,45 @@
         <div class="container-fluid">
           <!-- Info boxes -->
           <div class="row">
+            <!-- /.col -->
             <div class="col-12 col-sm-6 col-md-3">
-              <div class="info-box">
-                <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
-
+              <div class="info-box mb-3 bg-info">
+                <span class="info-box-icon"><i class="fas fa-check-circle"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">CPU Traffic</span>
-                  <span class="info-box-number">
-                    10
-                    <small>%</small>
-                  </span>
+                  <span class="info-box-text">Baik</span>
+                  <span class="info-box-number"><?= $baik; ?></span>
                 </div>
-                <!-- /.info-box-content -->
               </div>
               <!-- /.info-box -->
             </div>
-            <!-- /.col -->
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="info-box mb-3">
-                <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
-
-                <div class="info-box-content">
-                  <span class="info-box-text">Likes</span>
-                  <span class="info-box-number">41,410</span>
-                </div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-
-            <!-- fix for small devices only -->
-            <div class="clearfix hidden-md-up"></div>
-
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="info-box mb-3">
-                <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-
-                <div class="info-box-content">
-                  <span class="info-box-text">Sales</span>
-                  <span class="info-box-number">760</span>
-                </div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
             <div class="col-12 col-sm-6 col-md-3">
               <div class="info-box mb-3 bg-warning">
-                <span class="info-box-icon"><i class="fas fa-tag"></i></span>
+                <span class="info-box-icon"><i class="fas fa-times-circle"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Inventory</span>
-                  <span class="info-box-number">5,200</span>
+                  <span class="info-box-text">Rusak</span>
+                  <span class="info-box-number"><?= $rusak; ?></span>
+                </div>
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <!-- fix for small devices only -->
+            <div class="clearfix hidden-md-up"></div>
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="info-box mb-3 bg-success">
+                <span class="info-box-icon"><i class="fas fa-wrench"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Diterima</span>
+                  <span class="info-box-number"><?= $diterima; ?></span>
+                </div>
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="info-box mb-3 bg-danger">
+                <span class="info-box-icon"><i class="fas fa-times"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Ditolak</span>
+                  <span class="info-box-number"><?= $ditolak; ?></span>
                 </div>
               </div>
               <!-- /.info-box -->

@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="index3.html" class="brand-link">
-        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <a href="index.php" class="brand-link">
+        <img src="dist/img/inventaris.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">Inventaris</span>
       </a>
 
@@ -10,10 +10,11 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            <i class="fas fa-user-circle text-white text-lg mt-2 mr-1"></i>
+            <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> -->
           </div>
           <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
+            <a href="#" class="d-block"><?= $_SESSION['nama'] ?> | <?= $_SESSION['role'] ?> </a>
           </div>
         </div>
 
@@ -56,6 +57,7 @@
                 </p>
               </a>
             </li>
+            <?php if ($_SESSION['role'] == 'admin') : ?>
             <li class="nav-header">SETTINGS</li>
             <li class="nav-item">
               <a href="index.php?page=users" class="nav-link <?php $currentModule == 'users' ? print('active') : '' ?>">
@@ -65,6 +67,7 @@
                 </p>
               </a>
             </li>
+            <?php endif; ?>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

@@ -19,46 +19,87 @@
 
     <!-- Content Wrapper. Contains page content -->
     <?php
-      if (isset($_GET['page'])) {
+      if (isset($_GET['page']))
+      {
         $page = $_GET['page'];
+        
+        // cek url page
         if ($page == 'dashboard') {
           include 'pages/dashboard.php';
-        } else if ($page == 'barang') {
+        } 
+        if ($page == 'barang') {
           include 'pages/barang/index.php';
-        } else if ($page == 'tambah-barang') {
-          include 'pages/barang/create.php';
-        } else if ($page == 'edit-barang') {
-          include 'pages/barang/edit.php';
-        } else if ($page == 'hapus-barang') {
-          header('location: functions/barang/delete.php?id='.$_GET['id']);
-        } else if ($page == 'jenis-barang') {
-          include 'pages/jenis-barang/index.php';
-        } else if ($page == 'tambah-jenis-barang') {
-          include 'pages/jenis-barang/create.php';
-        } else if ($page == 'edit-jenis-barang') {
-          include 'pages/jenis-barang/edit.php';
-        } else if ($page == 'hapus-jenis-barang') {
-          header('location: functions/jenis-barang/delete.php?id='.$_GET['id']);
-        } else if ($page == 'karyawan') {
-          include 'pages/karyawan/index.php';
-        } else if ($page == 'tambah-karyawan') {
-          include 'pages/karyawan/create.php';
-        } else if ($page == 'edit-karyawan') {
-          include 'pages/karyawan/edit.php';
-        } else if ($page == 'hapus-karyawan') {
-          header('location: functions/karyawan/delete.php?id='.$_GET['id']);
-        } else if ($page == 'users') {
-          include 'pages/users/index.php';
-        } else if ($page == 'tambah-user') {
-          include 'pages/users/create.php';
-        } else if ($page == 'edit-user') {
-          include 'pages/users/edit.php';
-        } else if ($page == 'hapus-user') {
-          header('location: functions/users/delete.php?id='.$_GET['id']);
-        } else {
-          include 'pages/404.php';
         }
-      } else {
+        if ($page == 'jenis-barang') {
+          include 'pages/jenis-barang/index.php';
+        }
+        if ($page == 'karyawan') {
+          include 'pages/karyawan/index.php';
+        }
+
+        // role admin
+        if ($_SESSION['role'] == 'admin')
+        {
+          if ($page == 'tambah-barang') {
+            include 'pages/barang/create.php';
+          }
+          if ($page == 'edit-barang') {
+            include 'pages/barang/edit.php';
+          }
+          if ($page == 'hapus-barang') {
+              header('location: functions/barang/delete.php?id='.$_GET['id']);
+          } 
+          if ($page == 'baik-barang') {
+              header('location: functions/barang/good.php?id='.$_GET['id']);
+          } 
+          if ($page == 'rusak-barang') {
+              header('location: functions/barang/broken.php?id='.$_GET['id']);
+          } 
+          if ($page == 'tambah-jenis-barang') {
+              include 'pages/jenis-barang/create.php';
+          } 
+          if ($page == 'edit-jenis-barang') {
+              include 'pages/jenis-barang/edit.php';
+          } 
+          if ($page == 'hapus-jenis-barang') {
+              header('location: functions/jenis-barang/delete.php?id='.$_GET['id']);
+          } 
+          if ($page == 'tambah-karyawan') {
+              include 'pages/karyawan/create.php';
+          } 
+          if ($page == 'edit-karyawan') {
+              include 'pages/karyawan/edit.php';
+          } 
+          if ($page == 'hapus-karyawan') {
+              header('location: functions/karyawan/delete.php?id='.$_GET['id']);
+          } 
+          if ($page == 'users') {
+              include 'pages/users/index.php';
+          } 
+          if ($page == 'tambah-user') {
+              include 'pages/users/create.php';
+          } 
+          if ($page == 'edit-user') {
+              include 'pages/users/edit.php';
+          } 
+          if ($page == 'hapus-user') {
+              header('location: functions/users/delete.php?id='.$_GET['id']);
+          }
+        }
+
+        // role teknisi
+        if ($_SESSION['role'] == 'teknisi')
+        {
+          if ($page == 'terima-barang') {
+              header('location: functions/barang/accept.php?id='.$_GET['id']);
+          }
+          if ($page == 'tolak-barang') {
+            header('location: functions/barang/refuse.php?id='.$_GET['id']);
+          }
+        }
+      }
+      else
+      {
         include 'pages/dashboard.php';
       }
     ?>
@@ -75,10 +116,10 @@
 
     <!-- Main Footer -->
     <footer class="main-footer">
-      <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+      <strong>&copy; 2022 <a href="#">Inventaris</a>.</strong>
       All rights reserved.
       <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 3.2.0
+        <b>Version</b> 1.0.0
       </div>
     </footer>
   </div>

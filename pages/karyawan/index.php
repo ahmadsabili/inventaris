@@ -25,18 +25,22 @@
         <div class="row">
           <div class="col-12">
             <div class="card">
+              <?php if ($_SESSION['role'] == 'admin') : ?>
               <div class="card-header">
               <div class="float-right">
                   <a href="index.php?page=tambah-karyawan" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i>&nbsp; Tambah Karyawan</a>
               </div>
               </div>
+              <?php endif; ?>
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                     <th>No</th>
                     <th>Badge</th>
                     <th>Nama</th>
+                    <?php if ($_SESSION['role'] == 'admin') : ?>
                     <th>Aksi</th>
+                    <?php endif; ?>
                   </thead>
                   <tbody>
                     <?php foreach($result as $karyawan): ?>
@@ -44,10 +48,12 @@
                         <td><?= $no++ ?></td>
                         <td><?= $karyawan['badge'] ?></td>
                         <td><?= $karyawan['nama_karyawan'] ?></td>
+                        <?php if ($_SESSION['role'] == 'admin') : ?>
                         <td>
                           <a href="index.php?page=edit-karyawan&id=<?= $karyawan['id_karyawan'] ?>" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
                           <a href="index.php?page=hapus-karyawan&id=<?= $karyawan['id_karyawan'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Hapus data?')"><i class="fas fa-trash"></i></a>
                         </td>
+                        <?php endif; ?>
                       </tr>
                     <?php endforeach; ?>
                   </tbody>

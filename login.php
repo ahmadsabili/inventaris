@@ -22,9 +22,26 @@
       <h1><b>Inventaris</b></h1>
     </div>
     <div class="card-body">
+    <?php
+    if (isset($_GET['pesan'])) :
+    ?>
+    <div class="alert alert-danger alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <i class="icon fas fa-exclamation-triangle"></i>
+      <?php
+      if ($_GET['pesan'] == 'email-password-salah') {
+          echo 'Email atau password salah';
+      } elseif ($_GET['pesan'] == 'belum-login') {
+          echo 'Harap login terlebih dahulu';
+      } else {
+          echo 'Anda telah logout';
+      }
+      ?>
+    </div>
+    <?php endif; ?>
       <form action="auth/login.php" method="POST">
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" class="form-control" placeholder="Email" name="email" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -32,7 +49,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" class="form-control" placeholder="Password" name="password" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>

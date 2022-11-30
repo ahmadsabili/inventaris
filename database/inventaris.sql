@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 27 Nov 2022 pada 15.23
+-- Waktu pembuatan: 30 Nov 2022 pada 13.03
 -- Versi server: 10.6.9-MariaDB-log
 -- Versi PHP: 7.4.19
 
@@ -36,6 +36,16 @@ CREATE TABLE `barang` (
   `karyawan_id` int(11) NOT NULL,
   `kondisi` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `barang`
+--
+
+INSERT INTO `barang` (`id_barang`, `nama_barang`, `jenis_barang_id`, `kode_barang`, `no_aset`, `karyawan_id`, `kondisi`) VALUES
+(1, 'Laptop Lenovo', 4, '127426-4242', '2874284-42422', 2, 'Baik'),
+(2, 'Keyboard Logitech', 5, '138919831', '13891931', 1, 'Diterima'),
+(3, 'Laptop ROG', 4, '198319', '94198410', 2, 'Rusak'),
+(4, 'Keyboard Votre', 5, 'Q3931', '123123', 3, 'Ditolak');
 
 -- --------------------------------------------------------
 
@@ -77,7 +87,10 @@ CREATE TABLE `karyawan` (
 INSERT INTO `karyawan` (`id_karyawan`, `nama_karyawan`, `badge`) VALUES
 (1, 'Rofico Rapita Sari', '21-0045'),
 (2, 'Diah PL', '11-2627'),
-(3, 'Hari Pusadi', '12-1583');
+(3, 'Hari Pusadi', '12-1583'),
+(5, 'Ahmad Fadliansyah', '12-1385'),
+(6, 'Agung', '11-02872'),
+(7, 'Nur Hamida', '11-02876');
 
 -- --------------------------------------------------------
 
@@ -98,8 +111,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `nama`, `email`, `password`, `role`) VALUES
-(1, 'Billyyyyy', 'billy@gmail.com', 'hajhfdadada', 'teknisi'),
-(2, 'Admin', 'admin@gmail.com', '$2y$10$kwxxWDBL0q1MT65Lz5n1.O.vJWAF/.MrboBHbP./dRQ1CKk7zz9MW', 'admin');
+(2, 'Admin', 'admin@gmail.com', '$2y$10$kwxxWDBL0q1MT65Lz5n1.O.vJWAF/.MrboBHbP./dRQ1CKk7zz9MW', 'admin'),
+(4, 'Teknisi', 'teknisi@gmail.com', '$2y$10$u1PHiT3KQaP234obchAT0.bX1bImgYQFJjU8bfKtK/hRwxaws7Vy6', 'teknisi'),
+(5, 'User', 'user@gmail.com', '$2y$10$yTu10BR0Gh..voxsrgcqZ.tMslmcqK9caUgmia0Ttdo25F2aXb4LG', 'user');
 
 --
 -- Indexes for dumped tables
@@ -140,7 +154,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `jenis_barang`
@@ -152,13 +166,13 @@ ALTER TABLE `jenis_barang`
 -- AUTO_INCREMENT untuk tabel `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
