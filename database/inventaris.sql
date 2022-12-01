@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 01 Des 2022 pada 14.35
+-- Waktu pembuatan: 01 Des 2022 pada 17.17
 -- Versi server: 10.6.9-MariaDB-log
 -- Versi PHP: 7.4.19
 
@@ -31,7 +31,7 @@ CREATE TABLE `barang` (
   `id_barang` int(11) NOT NULL,
   `nama_barang` varchar(255) NOT NULL,
   `jenis_barang_id` int(11) NOT NULL,
-  `kode_barang` varchar(255) NOT NULL,
+  `unit_kerja` varchar(255) NOT NULL,
   `no_aset` varchar(255) NOT NULL,
   `karyawan_id` int(11) NOT NULL,
   `kondisi` varchar(255) NOT NULL
@@ -41,7 +41,7 @@ CREATE TABLE `barang` (
 -- Dumping data untuk tabel `barang`
 --
 
-INSERT INTO `barang` (`id_barang`, `nama_barang`, `jenis_barang_id`, `kode_barang`, `no_aset`, `karyawan_id`, `kondisi`) VALUES
+INSERT INTO `barang` (`id_barang`, `nama_barang`, `jenis_barang_id`, `unit_kerja`, `no_aset`, `karyawan_id`, `kondisi`) VALUES
 (1, 'Laptop Lenovo', 4, '127426-4242', '2874284-42422', 2, 'Baik'),
 (2, 'Keyboard Logitech', 5, '138919831', '13891931', 1, 'Diterima'),
 (3, 'Laptop ROG', 4, '198319', '94198410', 2, 'Rusak'),

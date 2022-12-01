@@ -41,9 +41,9 @@
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="kode_barang" class="col-sm-2 col-form-label">Kode Barang</label>
+                    <label for="unit_kerja" class="col-sm-2 col-form-label">Unit Kerja</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="kode_barang" name="kode_barang" placeholder="Masukkan kode barang" required value="<?= $result['kode_barang'] ?>">
+                      <input type="text" class="form-control" id="unit_kerja" name="unit_kerja" placeholder="Masukkan unit kerja" required value="<?= $result['unit_kerja'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">

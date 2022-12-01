@@ -41,7 +41,7 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                     <th>No</th>
-                    <th>Kode Barang</th>
+                    <th>Unit Kerja</th>
                     <th>No Aset</th>
                     <th>Nama Barang</th>
                     <th>Jenis</th>
@@ -55,7 +55,7 @@
                     <?php foreach($result as $barang): ?>
                       <tr>
                         <td><?= $no++ ?></td>
-                        <td><?= $barang['kode_barang'] ?></td>
+                        <td><?= $barang['unit_kerja'] ?></td>
                         <td><?= $barang['no_aset'] ?></td>
                         <td><?= $barang['nama_barang'] ?></td>
                         <td><?= $barang['nama_jenis'] ?></td>
