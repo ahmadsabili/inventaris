@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 30 Nov 2022 pada 13.03
+-- Waktu pembuatan: 01 Des 2022 pada 14.35
 -- Versi server: 10.6.9-MariaDB-log
 -- Versi PHP: 7.4.19
 
@@ -45,7 +45,8 @@ INSERT INTO `barang` (`id_barang`, `nama_barang`, `jenis_barang_id`, `kode_baran
 (1, 'Laptop Lenovo', 4, '127426-4242', '2874284-42422', 2, 'Baik'),
 (2, 'Keyboard Logitech', 5, '138919831', '13891931', 1, 'Diterima'),
 (3, 'Laptop ROG', 4, '198319', '94198410', 2, 'Rusak'),
-(4, 'Keyboard Votre', 5, 'Q3931', '123123', 3, 'Ditolak');
+(4, 'Keyboard Votre', 5, 'Q3931', '123123', 3, 'Ditolak'),
+(5, 'Laptop Acer', 4, '127426-4242', '49242-C24C2-11', 6, 'Selesai');
 
 -- --------------------------------------------------------
 
@@ -77,20 +78,21 @@ INSERT INTO `jenis_barang` (`id_jenis_barang`, `nama_jenis`) VALUES
 CREATE TABLE `karyawan` (
   `id_karyawan` int(11) NOT NULL,
   `nama_karyawan` varchar(255) NOT NULL,
-  `badge` varchar(255) NOT NULL
+  `badge` varchar(255) NOT NULL,
+  `no_hp` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `karyawan`
 --
 
-INSERT INTO `karyawan` (`id_karyawan`, `nama_karyawan`, `badge`) VALUES
-(1, 'Rofico Rapita Sari', '21-0045'),
-(2, 'Diah PL', '11-2627'),
-(3, 'Hari Pusadi', '12-1583'),
-(5, 'Ahmad Fadliansyah', '12-1385'),
-(6, 'Agung', '11-02872'),
-(7, 'Nur Hamida', '11-02876');
+INSERT INTO `karyawan` (`id_karyawan`, `nama_karyawan`, `badge`, `no_hp`) VALUES
+(1, 'Rofico Rapita Sari', '21-0045', '0812737833439'),
+(2, 'Diah PL', '11-2627', ''),
+(3, 'Hari Pusadi', '12-1583', ''),
+(5, 'Ahmad Fadliansyah', '12-1385', ''),
+(6, 'Agung', '11-02872', ''),
+(7, 'Nur Hamida', '11-02876', '');
 
 -- --------------------------------------------------------
 
@@ -154,7 +156,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `jenis_barang`
@@ -166,7 +168,7 @@ ALTER TABLE `jenis_barang`
 -- AUTO_INCREMENT untuk tabel `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`

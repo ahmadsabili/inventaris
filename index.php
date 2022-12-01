@@ -93,6 +93,9 @@
           if ($page == 'terima-barang') {
               header('location: functions/barang/accept.php?id='.$_GET['id']);
           }
+          if ($page == 'selesai-barang') {
+              header('location: functions/barang/done.php?id='.$_GET['id']);
+          }
           if ($page == 'tolak-barang') {
             header('location: functions/barang/refuse.php?id='.$_GET['id']);
           }

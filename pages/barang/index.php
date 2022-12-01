@@ -2,7 +2,7 @@
   $currentModule = 'barang';
 
   if ($_SESSION['role'] == 'teknisi') {
-    $sql = "SELECT * FROM barang INNER JOIN jenis_barang ON barang.jenis_barang_id = jenis_barang.id_jenis_barang INNER JOIN karyawan ON barang.karyawan_id = karyawan.id_karyawan WHERE barang.kondisi = 'Rusak' OR barang.kondisi = 'Diterima' OR barang.kondisi = 'Ditolak'";
+    $sql = "SELECT * FROM barang INNER JOIN jenis_barang ON barang.jenis_barang_id = jenis_barang.id_jenis_barang INNER JOIN karyawan ON barang.karyawan_id = karyawan.id_karyawan WHERE barang.kondisi = 'Rusak' OR barang.kondisi = 'Diterima' OR barang.kondisi = 'Selesai' OR barang.kondisi = 'Ditolak'";
   } else {
     $sql = "SELECT * FROM barang INNER JOIN jenis_barang ON barang.jenis_barang_id = jenis_barang.id_jenis_barang INNER JOIN karyawan ON barang.karyawan_id = karyawan.id_karyawan";
   }
@@ -65,6 +65,8 @@
                             echo 'badge-success';
                           } else if ($barang['kondisi'] == 'Ditolak') {
                             echo 'badge-danger';
+                          } else if ($barang['kondisi'] == 'Selesai') {
+                            echo 'badge-info';
                           } else if ($barang['kondisi'] == 'Rusak') {
                             echo 'badge-warning';
                           } else {
@@ -77,11 +79,12 @@
                           if ($_SESSION['role'] == 'teknisi') :
                           ?>
                           <a href="index.php?page=terima-barang&id=<?= $barang['id_barang'] ?>" class="btn btn-sm btn-success" title="Terima Perbaikan" onclick="return confirm('Terima perbaikan?')"><i class="fas fa-wrench"></i></a>
+                          <a href="index.php?page=selesai-barang&id=<?= $barang['id_barang'] ?>" class="btn btn-sm btn-info" title="Selesai" onclick="return confirm('Konfirmasi barang selesai?')"><i class="fas fa-check"></i></a>
                           <a href="index.php?page=tolak-barang&id=<?= $barang['id_barang'] ?>" class="btn btn-sm btn-danger" title="Tolak Perbaikan" onclick="return confirm('Tolak perbaikan?')"><i class="fas fa-times"></i></a>
                           <?php endif; ?>
 
                           <?php if ($_SESSION['role'] == 'admin') : ?>
-                          <?php if ($barang['kondisi'] == 'Rusak' || $barang['kondisi'] == 'Diterima') : ?>
+                          <?php if ($barang['kondisi'] == 'Rusak' || $barang['kondisi'] == 'Selesai') : ?>
                           <a href="index.php?page=baik-barang&id=<?= $barang['id_barang'] ?>" class="btn btn-sm btn-primary" title="Baik" onclick="return confirm('Ubah menjadi Baik?')"><i class="fas fa-check-circle"></i></a>
                           <?php endif; ?>
 

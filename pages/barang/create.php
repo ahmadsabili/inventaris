@@ -87,8 +87,12 @@
                         <label for="Diperbaiki" class="form-check-label">Diperbaiki</label>
                       </div>
                       <div class="form-check-inline mr-4">
-                        <input class="form-check-input" type="radio" id="Dibatalkan" name="kondisi" value="Dibatalkan">
-                        <label for="Dibatalkan" class="form-check-label">Dibatalkan</label>
+                        <input class="form-check-input" type="radio" id="Selesai" name="kondisi" value="Selesai">
+                        <label for="Selesai" class="form-check-label">Selesai</label>
+                      </div>
+                      <div class="form-check-inline mr-4">
+                        <input class="form-check-input" type="radio" id="Ditolak" name="kondisi" value="Ditolak">
+                        <label for="Ditolak" class="form-check-label">Ditolak</label>
                       </div>
                     </div>
                   </div>
